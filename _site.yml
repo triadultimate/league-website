@@ -4,8 +4,12 @@ navbar:
   left:
     - text: "Home"
       href: index.html
-    - text: "League Sign-Ups"
-      href: league.html    
+    - text: "League Info and Sign-Ups"
+      menu:
+        - text: "League Info"
+          href: league.html  
+        - text: "Summer '21"
+          href: league-summer-21.html
   right: 
     - text: "About"
       href: about.html      
@@ -14,3 +18,4 @@ navbar:
 output:
   html_document:
     theme: darkly
+    in_header: header.html
