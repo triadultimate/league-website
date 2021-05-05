@@ -26,3 +26,7 @@ TODO
   * good links for learners 
 
 * site per league?
+
+
+----------
+https://emojipedia.org/flying-disc/#:~:text=A%20flying%20disc%2C%20more%20commonly,to%20Emoji%2011.0%20in%202018.
