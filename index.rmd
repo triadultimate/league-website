@@ -1,0 +1,19 @@
+---
+title: "Welcome"
+output: html_document
+---
+
+This is where we would put all of the information we would want about the different things.
+
+# Annoucements 
+
+* We are having league this summer!
+
+# COVID Protocols 
+
+This is then another thing about COVID... what we are doing, what we are not doing
+
+# FYI
+
+Some of the basics around what we are doing
+

@@ -1,0 +1,30 @@
+---
+title: "About Us"
+output: html_document
+---
+
+Hi there!
+
+Thanks for visiting! This is the landing page to give an overview of what we are doing with leagues.
+
+The people currently organzing this mess are:
+
+* Mike Ridge  
+* Jess Cheu 
+* Phil Walker
+
+Feel free to reach out to us if you have any questions by sending us email to <triadultimate@gmail.com>
+
+
+What are our goals?  
+
+* An inclusive league where players are excited to come back to not only go individually but to see the ultimate community grow in the Triad area.
+* To not go broke
+
+How do we plan on meeting them?
+
+
+
+
+
+

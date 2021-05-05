@@ -1,0 +1,16 @@
+name: "triad-ultimate-leagues"
+navbar:
+  title: "Triad Ultimate"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "League Sign-Ups"
+      href: league.html    
+  right: 
+    - text: "About"
+      href: about.html      
+    - icon: fa-envelope fa-lg
+      href: mailto:<triadultimate@gmail.com.com>
+output:
+  html_document:
+    theme: darkly

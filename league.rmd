@@ -1,0 +1,19 @@
+---
+title: "Signing Up"
+output: html_document
+---
+
+Below is information on how to sign up for summer league.
+
+
+>> Information here with the form/link depending on how the site renders the information
+
+
+# Summer League 2021
+
+* Dates: June __ -> Aug __   
+* Location: 
+    How to get there? Good question. 
+* Teams:
+
+ 
