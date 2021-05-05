@@ -16,5 +16,5 @@ If you want to see more details about how the league is going to be run, choose 
     * PayPal >> 
 
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeZcQi-pTylk-XN2T_l5v3kB8ajJYFCjuiWqeJulxPW2AxYhg/viewform?embedded=true" width="640" height="881" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeZcQi-pTylk-XN2T_l5v3kB8ajJYFCjuiWqeJulxPW2AxYhg/viewform?embedded=true" width="840" height="1281" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
  
