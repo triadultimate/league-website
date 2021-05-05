@@ -3,12 +3,18 @@ title: "Signing Up"
 output: html_document
 ---
 
-Attempting to embed the google form in here...
+Welcome to the location to sign up for Summer League 2021. If it is no longer summer, then this is the wrong location.
+
+If you want to see more details about how the league is going to be run, choose the "League Info" drop down
 
 
+# Sign up Steps  
 
-<iframe
-src="https://docs.google.com/forms/d/1OdCZTj7Hgcoln1AEupmmF0zGKKfkcFKtTbegb99yZhI/edit?usp=sharing" width = "700" height = "520" frameborder="0" marginheight="0" marginwidth = "0">
-</iframe>
+1. Please fill out the survey form below to help us understand your relative skill level.  
+1. Send money to Triad Ultimate via paypal or venmo  
+    * Venmo >>  
+    * PayPal >> 
 
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeZcQi-pTylk-XN2T_l5v3kB8ajJYFCjuiWqeJulxPW2AxYhg/viewform?embedded=true" width="640" height="881" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
  
