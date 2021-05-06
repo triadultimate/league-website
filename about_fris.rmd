@@ -1,0 +1,29 @@
+---
+title: "About Frisbee"
+output: html_document
+---
+
+This is where we can save information about ultimate to help have a resource for new people tothe sport.
+
+
+
+# General Topics
+
+
+## Offense
+
+Links to helpful websites  
+
+* Link 1  
+* Link 2
+
+
+## Defense
+
+
+## Rules
+
+
+# Governing Body
+
+

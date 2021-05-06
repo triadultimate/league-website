@@ -14,10 +14,17 @@ navbar:
       href: sample_markdown.html
   right: 
     - text: "About"
-      href: about.html      
+      menu:
+      - text: "About Us"
+        href: about.html
+      - text: "About Frisbee"
+        href: about_fris.html
     - icon: fa-envelope fa-lg
       href: mailto:<triadultimate@gmail.com.com>
 output:
   html_document:
     theme: darkly
-    in_header: header.html
+    includes:
+      in_header: header.html
+      
+      
