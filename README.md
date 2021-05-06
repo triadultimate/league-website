@@ -30,3 +30,11 @@ TODO
 
 ----------
 https://emojipedia.org/flying-disc/#:~:text=A%20flying%20disc%2C%20more%20commonly,to%20Emoji%2011.0%20in%202018.
+
+
+```{css, echo=FALSE, eval=F}
+.book-body.fixed {
+    width: 100%;
+    max-width: unset;
+}
+```
