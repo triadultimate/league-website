@@ -1,7 +1,19 @@
 ---
 title: "Signing Up"
 output: html_document
+editor_options: 
+  chunk_output_type: console
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+knitr::opts_chunk$set(fig.align = 'center')
+library(tidyverse)
+library(leaflet)
+
+# To Turn off Scientific Notation Use this.
+options(scipen = 999)
+```
 
 Below is information on how to sign up for summer league.
 
@@ -16,4 +28,53 @@ Below is information on how to sign up for summer league.
     How to get there? Good question. 
 * Teams:
 
+## Where
+
+Use the following address: 470 Dartmouth Rd NW, Winston-Salem, NC 27104
+
+__Park:__ In the dirt lot, fields are down the hill.
+
+```{r, out.width=6, out.height=6}
+
+whitaker <- tibble(
+  name = c("Whitaker Park"),
+  lat = c(36.1047464),
+  long = c(-80.2878809)
+)
+
+
+leaflet() %>% 
+  # addTiles() %>% 
+    addProviderTiles(providers$HERE.normalDay) %>%
+  # addProviderTiles(providers$HERE.basicMap, CartoDB
+  #   options = providerTileOptions(opacity = 0.05)) %>% 
+  addMarkers(whitaker$long, 
+             whitaker$lat, 
+             popup = whitaker$name
+             ) %>%
+  setView(whitaker$long, 
+          whitaker$lat, 
+          zoom = 11) 
+
+
+# providers <- providers
+```
+
+
+
  
+
+Below is what we are thinking:
+
+1. When: Mondays, disc flies at 6pm with games finishing before 8pm.  
+2. Where: Whittaker  
+3. Who: You!  
+4. What (do you get):   
+   4a. 10 weeks of co-ed Ultimate (from early June to late August) first pull at 6pm, playing to 15 or hard cap at 8pm.  
+   4b. 1 day tournament on a Saturday in late August
+   4c. A short sleeve jersey with a snazzy Summer League logo 
+   4d. Friends! 
+6. How (much): $50
+
+Looking forward to seeing all of you out there!
+-management

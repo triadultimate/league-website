@@ -3,6 +3,16 @@ title: "Signing Up"
 output: html_document
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+knitr::opts_chunk$set(fig.align = 'center')
+library(tidyverse)
+# library(reactable)
+
+# To Turn off Scientific Notation Use this.
+options(scipen = 999)
+```
+
 Welcome to the location to sign up for Summer League 2021. If it is no longer summer, then this is the wrong location.
 
 If you want to see more details about how the league is going to be run, choose the [League Info](https://triad-ultimate.netlify.app/league.html) drop down
@@ -20,7 +30,7 @@ If you want to see more details about how the league is going to be run, choose 
     * The captains will be gathering to figure out how to best set up teams to ensure we all have a fun time this summer.
 
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeZcQi-pTylk-XN2T_l5v3kB8ajJYFCjuiWqeJulxPW2AxYhg/viewform?embedded=true" width="840" height="1281" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeZcQi-pTylk-XN2T_l5v3kB8ajJYFCjuiWqeJulxPW2AxYhg/viewform?embedded=true" width="840" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
  
 
 # But what does the logo look like???
