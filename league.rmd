@@ -6,55 +6,63 @@ editor_options:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+knitr::opts_chunk$set(echo = FALSE) #, message = FALSE, warning = FALSE
 knitr::opts_chunk$set(fig.align = 'center')
 library(tidyverse)
 library(leaflet)
 
 # To Turn off Scientific Notation Use this.
 options(scipen = 999)
-```
 
-Below is information on how to sign up for summer league.
-
-
->> Information here with the form/link depending on how the site renders the information
-
-
-# Summer League 2021
-
-* Dates: June __ -> Aug __   
-* Location: 
-    How to get there? Good question. 
-* Teams:
-
-## Where
-
-Use the following address: 470 Dartmouth Rd NW, Winston-Salem, NC 27104
-
-__Park:__ In the dirt lot, fields are down the hill.
-
-```{r, out.width=6, out.height=6}
-
+# lat/long for field location
 whitaker <- tibble(
   name = c("Whitaker Park"),
   lat = c(36.1047464),
   long = c(-80.2878809)
 )
 
+```
 
-leaflet() %>% 
-  # addTiles() %>% 
-    addProviderTiles(providers$HERE.normalDay) %>%
-  # addProviderTiles(providers$HERE.basicMap, CartoDB
-  #   options = providerTileOptions(opacity = 0.05)) %>% 
+Below is information on how to sign up for summer league.
+
+
+
+
+# Summer League 2021 {.tabset .tabset-fade .tabset-pills}
+
+## When
+
+Dates: June 1st -> Aug 24th (League Tourney)   
+
+<!-- <a target="_blank" href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=MHQ1Z2s5ZHEyNTdvbDRpbG4xbjQ1Mzh0NzBfMjAyMTA2MDFUMjIwMDAwWiB0cmlhZHVsdGltYXRlQG0&amp;tmsrc=triadultimate%40gmail.com&amp;scp=ALL"><img border="0" src="https://www.google.com/calendar/images/ext/gc_button1_en.gif"></a> -->
+
+
+[Link to Event](https://calendar.google.com/event?action=TEMPLATE&tmeid=MHQ1Z2s5ZHEyNTdvbDRpbG4xbjQ1Mzh0NzBfMjAyMTA2MDFUMjIwMDAwWiB0cmlhZHVsdGltYXRlQG0&tmsrc=triadultimate%40gmail.com&scp=ALL)
+
+## Where
+
+Use the following address: [470 Dartmouth Rd NW, Winston-Salem, NC 27104](https://www.google.com/search?q=470+Dartmouth+Rd+NW%2C+Winston-Salem%2C+NC+27104&rlz=1C1EJFC_enUS838US838&oq=470+Dartmouth+Rd+NW%2C+Winston-Salem%2C+NC+27104&aqs=chrome..69i57.176j0j7&sourceid=chrome&ie=UTF-8)
+
+__Park:__ In the dirt lot, fields are down the hill.
+
+```{r map, out.width=6, out.height=300, out.width="100%"}
+
+l <- 
+  leaflet(data = whitaker) %>% 
+  addTiles() %>%
+    addProviderTiles(providers$Esri.WorldImagery) %>%
+  addProviderTiles(providers$CartoDB,
+    options = providerTileOptions(opacity = 0.75)) %>%
   addMarkers(whitaker$long, 
              whitaker$lat, 
              popup = whitaker$name
              ) %>%
   setView(whitaker$long, 
           whitaker$lat, 
-          zoom = 11) 
+          zoom = 16) 
+
+l
+# widgetframe::frameWidget(l, width = "100%")
 
 
 # providers <- providers
@@ -62,19 +70,27 @@ leaflet() %>%
 
 
 
- 
+## Who
 
-Below is what we are thinking:
+You!  
 
-1. When: Mondays, disc flies at 6pm with games finishing before 8pm.  
-2. Where: Whittaker  
-3. Who: You!  
-4. What (do you get):   
-   4a. 10 weeks of co-ed Ultimate (from early June to late August) first pull at 6pm, playing to 15 or hard cap at 8pm.  
-   4b. 1 day tournament on a Saturday in late August
-   4c. A short sleeve jersey with a snazzy Summer League logo 
-   4d. Friends! 
-6. How (much): $50
 
-Looking forward to seeing all of you out there!
--management
+<center>
+![](https://media.giphy.com/media/xUOxf7XfmpxuSode1O/giphy.gif)
+
+
+
+## What (do you get):   
+   
+* 10 weeks of co-ed Ultimate (from early June to late August) first pull at 6pm, playing to 15 or hard cap at 8pm.    
+* 1 day tournament on a Saturday in late August  
+* A short sleeve jersey with a snazzy Summer League logo   
+* Friends!  
+
+## How (much) 
+
+$50
+
+Send money to Triad Ultimate via paypal or venmo  
+    * Venmo >>  
+    * PayPal >> 
