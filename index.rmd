@@ -3,12 +3,12 @@ title: "Triad Ultimate"
 output: html_document
 ---
 
-Wecome to the league 
+Welcome to the league 
 
 
 ## Annoucements 
 
-* We are having league this summer! Horray!
+* We are having league this summer! Hooray!
 
 </br>
 
@@ -51,14 +51,14 @@ We appreciate your cooperation with our game play modifications this summer and 
 Thank you so much for promptly paying league dues. The dues go to the following items:  
 
 * Reserving fields
-* Purchasing general libability insurance  
+* Purchasing general liability insurance  
 * Super cool jersey
   * Materials + Printing costs + Design fee from exclusive design artist
-* Small buffer to ensure we can cover unforseen costs
+* Small buffer to ensure we can cover unforeseen costs
 
 
 ### Other Questions?
 
 If you have any questions, comments, concerns, suggestions, exhortations, or exclamations please don't hesitate to reach out to <triadultimate@gmail.com> 
 
-If you have would like to assist in maintenace and context development for this site and/or the league, please also feel free to reach out!
+If you have would like to assist in maintenance and context development for this site and/or the league, please also feel free to reach out!

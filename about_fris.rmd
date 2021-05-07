@@ -3,27 +3,14 @@ title: "About Frisbee"
 output: html_document
 ---
 
-This is where we can save information about ultimate to help have a resource for new people tothe sport.
+This is where we can save information about ultimate to help have a resource for new people to the sport.
+
+Note: This page is currently under development, but in the meantime enjoy!
 
 
-
-# General Topics
-
-
-## Offense
-
-Links to helpful websites  
-
-* Link 1  
-* Link 2
+<center>
+![](https://laughingsquid.com/wp-content/uploads/2017/08/frisbee-dog-misses.gif?w=750)
 
 
-## Defense
-
-
-## Rules
-
-
-# Governing Body
 
 
