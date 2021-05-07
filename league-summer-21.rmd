@@ -16,7 +16,7 @@ options(scipen = 999)
 
 Welcome to the location to sign up for Summer League 2021. If it is no longer summer, then this is the wrong location.
 
-<!-- If you want to see more details about how the league is going to be run, choose the [League Info](https://triad-ultimate.netlify.app/league.html) drop down -->
+If you want to see more details about how the league is going to be run, choose the [Home page](https://triad-ultimate.netlify.app/index.html) or click the 3 lines on the top right.
 
 
 
@@ -102,6 +102,7 @@ You!
         * use username: "@triad-area-ultimate"
     * PayPal >> [Link to paypal](https://paypal.me/triadareaultimate)
         * use username: "triadareaultimate"
+        * Note: This account is associated with our league treasurer (Jess Cheu), don't be afraid, she is very trustworthy.
 1. Please fill out the survey form below to help us understand your relative skill level.  
 1. Wait eagerly for league to start.
     * You will be be contacted soon, the captains will be gathering to figure out how to best set up teams to ensure we all have a fun time this summer.
