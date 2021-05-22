@@ -4,7 +4,7 @@ navbar:
   left:
     - text: "Home"
       href: index.html
-    - text: "League Info and Sign-Ups"
+    - text: "League Info (Sign-ups and Teams)"
       menu:
         - text: "League Info"
           # href: league.html  
