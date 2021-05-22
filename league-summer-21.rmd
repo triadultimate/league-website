@@ -1,6 +1,8 @@
 ---
 title: "Signing Up"
 output: html_document
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
@@ -8,8 +10,8 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 knitr::opts_chunk$set(fig.align = 'center')
 library(tidyverse)
 library(leaflet)
-# library(reactable)
-
+library(reactable)
+library(crosstalk)
 # To Turn off Scientific Notation Use this.
 options(scipen = 999)
 ```
@@ -91,6 +93,99 @@ You!
 
 
 </br>
+
+# Teams {.tabset .tabset-fade .tabset-pills}
+
+## Captains 
+
+We have four team this year, with two captains per team 
+
+1. Jess/ Jason  >> Team Green   
+1. Marissa/ Mikey  >> Team Purple   
+1. Tryan/ Will  >> Team White  
+1. Marriame/ Phil >> Team Gold 
+
+
+
+## Teams
+
+```{r}
+teams <- readxl::read_excel(here::here("data", "DraftedTeams_Emails_Website.xlsx")) %>% 
+  select(Team, Players = `Clean Name`,Gender, Role) %>% 
+  arrange(Team, Role, Gender, Players) %>% 
+  mutate(Players = ifelse(Players == "Walker, Phol", "Walker, Phil", Players))
+
+teams_data <- SharedData$new(teams)
+
+
+# Create a better tooltip for the specific column of interest
+with_tooltip <- function(value, tooltip) {
+  span(
+    style = "text-decoration: underline;",
+    title = tooltip, value
+  )
+}
+
+options(reactable.theme = reactableTheme(
+  color = "hsl(233, 9%, 87%)",
+  backgroundColor = "hsl(233, 9%, 19%)",
+  borderColor = "hsl(233, 9%, 22%)",
+  stripedColor = "hsl(233, 12%, 22%)",
+  highlightColor = "hsl(233, 12%, 24%)",
+  inputStyle = list(backgroundColor = "hsl(233, 9%, 25%)"),
+  selectStyle = list(backgroundColor = "hsl(233, 9%, 25%)"),
+  pageButtonHoverStyle = list(backgroundColor = "hsl(233, 9%, 25%)"),
+  pageButtonActiveStyle = list(backgroundColor = "hsl(233, 9%, 28%)")
+))
+
+
+teams_table <- reactable(teams_data,
+          pagination = T, searchable = T, striped = T, fullWidth = T, compact = T,
+          groupBy = "Team", defaultExpanded = TRUE,
+  #           rowStyle = JS("function(rowInfo) {
+  #   if (rowInfo.level > 0) {
+  #     return { background: '#eee', borderLeft: '2px solid #ffa62d' }
+  #   } else {
+  #     return { borderLeft: '2px solid transparent' }
+  #   }
+  # }"),
+          columns = list(
+            Players = colDef(
+              name = "Player Name",  style = list(fontFamily = "Lato"), align = "left"
+            ),
+             Team = colDef(
+              name = "Team Color",  style = list(fontFamily = "Lato"), align = "left"
+            ),
+             Role = colDef(
+              name = "Role",  style = list(fontFamily = "Lato"), align = "left"
+            ),
+             Gender = colDef(
+              name = "Gender",  style = list(fontFamily = "Lato"), align = "left"
+            ) 
+          ))
+
+bscols(
+  # bootstrap is built off a 12 wide grid system,
+  # so we have 1/6 and 5/6 width below
+  widths = c(2, 10),
+  list(
+    filter_checkbox("type", "Role", teams_data, ~Role),
+    filter_select("team", "Team", teams_data, ~Team),
+    filter_select("ply", "Player Name", teams_data, ~Players)
+  ),
+  # add our table next to the filters
+  teams_table
+)
+
+```
+
+
+
+## Schedules
+
+__Note: Schedule is still in development and will be published soon__
+Weeks 1 - Week 10
+
 
 # Sign up Steps  
 
