@@ -175,16 +175,34 @@ bscols(
 
 ## Schedules
 
-__Note: Schedule is still in development and will be published soon__
+__Note: Schedule is still in development and will be published soon__   
+
+
 Weeks 1 - Week 10
+
+```{r}
+tibble(
+  weekNum = 1:10,
+  Week = glue::glue("Week {weekNum}"),
+  `Field 1` = '',
+  `Field 2` = ''
+) %>% 
+  select(-weekNum) %>% 
+  reactable()
+```
+
+
+
 
 ## Captains 
 
 We have four team this year, with two captains per team 
 
-1. Jess/ Jason  >> Team Green   
-1. Marissa/ Mikey  >> Team Purple   
-1. Tryan/ Will  >> Team White  
+1. Jess/ Jason (J&J)  >> Team Green    
+    * Aka the frisbee is the vaccine of the soul  
+1. Marissa/ Mikey (Eminem) >> Team Purple  
+    * Aka, we're going to run 8 mile
+1. Tryan/ Will  >> Team White   
 1. Marriame/ Phil >> Team Gold 
 
 
