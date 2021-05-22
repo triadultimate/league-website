@@ -189,7 +189,7 @@ Weeks 1 - Week 10
 
 # Sign up Steps   {.tabset .tabset-fade .tabset-pills}
 
-#  Sign up
+##  Sign up
 
 1. Send money ($50) to Triad Ultimate via paypal or venmo  
     * Venmo >> [Link to account](https://venmo.com/code?user_id=1599495850688512407)
@@ -209,7 +209,7 @@ Instead of filling out the form below, you can also click on [this link](https:/
 
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeZcQi-pTylk-XN2T_l5v3kB8ajJYFCjuiWqeJulxPW2AxYhg/viewform?embedded=true" width="840" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
  
- # What's Next??
+## What's Next??
  
  Now we wait
 
