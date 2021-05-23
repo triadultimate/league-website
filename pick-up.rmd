@@ -1,0 +1,28 @@
+---
+title: "Signing Up"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+Last Updated: `r Sys.Date()`
+
+# How to find up to date info
+
+
+* Join the Slack channel!  
+    * Download Slack
+    * [Follow this link to join](https://join.slack.com/t/triadareaultimate/shared_invite/zt-q4iwyc07-jhdP6gCDOZe8nyPZa0f3IA) 
+
+# Current Pick-up Opportunities
+
+
+## Winston
+
+* Tuesdays at 5:30pm at Miller park   
+* Sundays at 5:30pm at Miller Park
+
+
+## Greensboro
+
+* Saturdays at 9:30am at Gibson park

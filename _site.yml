@@ -12,6 +12,11 @@ navbar:
           href: league-summer-21.html
  #   - text: "sample"
 #      href: sample_markdown.html
+    - text: "Other Opportunities"
+      menu:
+        - text: "Pick Up"
+          href: pick-up.html
+        - text: "Youth Ultimate"
   right: 
     - text: "About"
       menu:
