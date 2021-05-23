@@ -175,22 +175,40 @@ bscols(
 
 ## Schedules
 
-__Note: Schedule is still in development and will be published soon__   
+```{r, eval=F}
+# tibble(
+#   weekNum = 1:10,
+#   Week = glue::glue("Week {weekNum}"),
+#   `Field 1` = '',
+#   `Field 2` = ''
+# ) %>% 
+#   select(-weekNum) %>% 
+#   reactable()
 
+# library(googlesheets4)
 
-Weeks 1 - Week 10
+sched <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1v2M5F5Q8SMBOmQt7tyLuQ7I9JECQuqzY7B8lyMdAwcs/edit#gid=0")
 
-```{r}
-tibble(
-  weekNum = 1:10,
-  Week = glue::glue("Week {weekNum}"),
-  `Field 1` = '',
-  `Field 2` = ''
-) %>% 
-  select(-weekNum) %>% 
-  reactable()
+save(sched, file= here::here("data", "sched.rda"))
+
 ```
 
+
+```{r}
+load(file= here::here("data", "sched.rda"))
+
+sched %>% 
+  mutate(`Field 1` = str_remove_all(`Field 1`, "@ Field 1"),
+         `Field 2` = str_remove_all(`Field 2`, "@ Field 2")) %>% 
+  select(-Num) %>% 
+  reactable(searchable = T, striped = T, fullWidth = T, compact = T)
+
+```
+
+
+```{r echo=FALSE, out.width='50%'}
+knitr::include_graphics(here::here("img","fields.png"))
+```
 
 
 
