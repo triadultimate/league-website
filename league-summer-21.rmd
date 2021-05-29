@@ -217,11 +217,12 @@ knitr::include_graphics(here::here("img","fields.png"))
 We have four team this year, with two captains per team 
 
 1. Jess/ Jason (J&J)  >> Team Green    
-    * Aka the frisbee is the vaccine of the soul  
+    * Aka the frisbee is the vaccine of the soul
+    * Aka we will start with one shot every time
 1. Marissa/ Mikey (Eminem) >> Team Purple  
     * Aka, we're going to run 8 mile
-1. Tryan/ Will  >> Team White   
-1. Marriame/ Phil >> Team Gold 
+1. Taryn/ Will  >> Team White   
+1. Marriame/ Phil >> Team Orange 
 
 
 
