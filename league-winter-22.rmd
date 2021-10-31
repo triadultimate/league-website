@@ -16,9 +16,9 @@ library(crosstalk)
 options(scipen = 999)
 ```
 
-Welcome to the location to sign up for Summer League 2021. If it is no longer summer, then this is the wrong location.
+Welcome to the location to sign up for Winter League 2022.
 
-If you want to see more details about how the league is going to be run, choose the [Home page](https://triad-ultimate.netlify.app/index.html) or click the 3 lines on the top right.
+If you want to see more details about how the league is going to be run, choose the [Home page](https://triad-ultimate.netlify.app/index.html) or click the 3 lines on the top right (if you are on your phone).
 
 # Sign up Steps   {.tabset .tabset-fade .tabset-pills}
 
@@ -123,7 +123,7 @@ You!
    
 * 9 weeks of co-ed Ultimate (from January to March) first pull at 9am, playing to 15 or hard cap at 8pm.    
 * 1 day tournament on a Saturday in March  
-* A short sleeve jersey with a snazzy Summer League logo   
+* A jersey with a snazzy logo   
 * Friends!  
 
 
