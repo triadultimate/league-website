@@ -19,10 +19,14 @@ Last Updated: `r Sys.Date()`
 
 ## Winston
 
-* Tuesdays at 5:30pm at Miller park   
-* Sundays at 5:30pm at Miller Park
+* Tuesdays at 5:30pm at Miller park  
+    * Winter weekday at Miller is cancelled due to lack of daylight.
+* Sundays at Miller Park  
+    * Summer start: 5:30pm
+    * Winter start: 2:30pm
+
 
 
 ## Greensboro
 
-* Saturdays at 9:30am at Gibson park
+* Saturdays at 9:30am at Gibson park or Triad Park
