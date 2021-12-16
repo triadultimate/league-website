@@ -225,7 +225,7 @@ We have four teams this year, with either one or two captains per team
 
 Currently in development! Check back soon!
 
-```{r echo=FALSE, out.width='50%', eval=F}
+```{r echo=FALSE, out.width='50%', eval=T}
 knitr::include_graphics(here::here("img","pic_2022_dark.jpg"))
 ```
 
