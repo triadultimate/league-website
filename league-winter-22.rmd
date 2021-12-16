@@ -16,45 +16,11 @@ library(crosstalk)
 options(scipen = 999)
 ```
 
+
+
 Welcome to the location to sign up for Winter League 2022.
 
 If you want to see more details about how the league is going to be run, choose the [Home page](https://triad-ultimate.netlify.app/index.html) or click the 3 lines on the top right (if you are on your phone).
-
-# Sign up Steps   {.tabset .tabset-fade .tabset-pills}
-
-##  Sign up
-
-1. Send money (__$60__) to Triad Ultimate via paypal or venmo  
-    <!-- * Venmo >> [Link to account](https://venmo.com/code?user_id=1599495850688512407 )   -->
-    * Venmo >> [Link to account](https://venmo.com)
-        * Note: Must be logged in to venmo before clicking on link
-        * Must also be accessed through your phone.
-        * use username: "@Philip-Walker"
-    * PayPal >> [Link to paypal](https://paypal.me/Phillyfrilz)
-        * use username: "Phillyfrilz"
-        * Note: This account is associated with our league treasurer (Phil Walker), don't be afraid, he's super trustworthy.
-1. Please fill out the survey form below to help us understand your relative skill level.  
-1. Wait eagerly for league to start.
-    * You will be be contacted soon, the captains will be gathering to figure out how to best set up teams to ensure we all have a fun time this summer.
-
-
-Instead of filling out the form below, you can also click on [this link](https://forms.gle/SH1SyBCZ5RZekeeB8)
-
-
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScEZHYwBvH4RnN7ItE8CsowxQLJmzeO0YwXnI724wNJnvIsEw/viewform?embedded=true" width="840" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
- 
-## What's Next??
- 
- Now we wait
-
-# But what does the logo look like???
-
-Currently in development! Check back soon!
-
-```{r echo=FALSE, out.width='50%', eval=F}
-knitr::include_graphics(here::here("img","SummerLeague_2021_Artwork.jpeg"))
-```
-
 
 
 # Winter League 2022 Info {.tabset .tabset-fade .tabset-pills}
@@ -78,26 +44,26 @@ Use the following address: [Smith Soccer Park: 2399 Veasley St, Greensboro, NC 2
 
 <!-- __Park:__ In the dirt lot, fields are down the hill. -->
 
-```{r map, out.width=6, out.height=300, out.width="100%", eval=F}
+```{r map, out.width=6, out.height=300, out.width="100%", eval=T}
 # lat/long for field location
-whitaker <- tibble(
+fields <- tibble(
   name = c("Smith Soccer Park"),
-  lat = c(36.1116824),
-  long = c(-79.9070843)
+  lat = c(36.0358156),
+  long = c(-79.8463414)
 )
 
 l <- 
-  leaflet(data = whitaker) %>% 
+  leaflet(data = fields) %>% 
   addTiles() %>%
     addProviderTiles(providers$Esri.WorldImagery) %>%
   addProviderTiles(providers$CartoDB,
     options = providerTileOptions(opacity = 0.75)) %>%
-  addMarkers(whitaker$long, 
-             whitaker$lat, 
-             popup = whitaker$name
+  addMarkers(fields$long, 
+             fields$lat, 
+             popup = fields$name
              ) %>%
-  setView(whitaker$long, 
-          whitaker$lat, 
+  setView(fields$long, 
+          fields$lat, 
           zoom = 16) 
 
 l
@@ -129,18 +95,19 @@ You!
 
 </br>
 
-<!-- # Teams {.tabset .tabset-fade .tabset-pills} -->
+# Teams {.tabset .tabset-fade .tabset-pills}
 
 
-<!-- ## Teams -->
+## Teams
 
-<!-- Use the table below to find out what team you are on and who your captains are. -->
+Use the table below to find out what team you are on and who your captains are.
 
-```{r, eval=F}
-teams <- readxl::read_excel(here::here("data", "DraftedTeams_Emails_Website.xlsx")) %>% 
+```{r, eval=T}
+teams <- readxl::read_excel(here::here("data", "2022Winter_DraftedTeams_Emails_Website.xlsx"), sheet="Sheet2") %>% 
   select(Team, Players = `Clean Name`,Gender, Role) %>% 
   arrange(Team, Role, Gender, Players) %>% 
-  mutate(Players = ifelse(Players == "Walker, Phol", "Walker, Phil", Players))
+  # mutate(Players = ifelse(Players == "Walker, Phol", "Walker, Phil", Players)) %>% 
+  ungroup()
 
 teams_data <- SharedData$new(teams)
 
@@ -208,7 +175,9 @@ bscols(
 
 
 
-<!-- ## Schedules -->
+## Schedules
+
+Note: Still in development. Check back soon for updates.
 
 ```{r, eval=F}
 # tibble(
@@ -249,7 +218,46 @@ knitr::include_graphics(here::here("img","fields.png"))
 
 ## Captains 
 
-We have four teams this year, with two captains per team 
+We have four teams this year, with either one or two captains per team 
+
+
+# But what does the logo look like???
+
+Currently in development! Check back soon!
+
+```{r echo=FALSE, out.width='50%', eval=F}
+knitr::include_graphics(here::here("img","pic_2022_dark.jpg"))
+```
+
+
+
+# Sign up Steps   {.tabset .tabset-fade .tabset-pills}
+
+##  Sign up
+
+1. Send money (__$60__) to Triad Ultimate via paypal or venmo  
+    <!-- * Venmo >> [Link to account](https://venmo.com/code?user_id=1599495850688512407 )   -->
+    * Venmo >> [Link to account](https://venmo.com)
+        * Note: Must be logged in to venmo before clicking on link
+        * Must also be accessed through your phone.
+        * use username: "@Philip-Walker"
+    * PayPal >> [Link to paypal](https://paypal.me/Phillyfrilz)
+        * use username: "Phillyfrilz"
+        * Note: This account is associated with our league treasurer (Phil Walker), don't be afraid, he's super trustworthy.
+1. Please fill out the survey form below to help us understand your relative skill level.  
+1. Wait eagerly for league to start.
+    * You will be be contacted soon, the captains will be gathering to figure out how to best set up teams to ensure we all have a fun time this summer.
+
+
+Instead of filling out the form below, you can also click on [this link](https://forms.gle/SH1SyBCZ5RZekeeB8)
+
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScEZHYwBvH4RnN7ItE8CsowxQLJmzeO0YwXnI724wNJnvIsEw/viewform?embedded=true" width="840" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+ 
+## What's Next??
+ 
+ Now we wait
+
 
 
 
