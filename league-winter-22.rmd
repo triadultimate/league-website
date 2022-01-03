@@ -177,9 +177,9 @@ bscols(
 
 ## Schedules
 
-Note: Still in development. Check back soon for updates.
+<!-- Note: Still in development. Check back soon for updates. -->
 
-```{r, eval=F}
+```{r, eval=T}
 # tibble(
 #   weekNum = 1:10,
 #   Week = glue::glue("Week {weekNum}"),
@@ -191,20 +191,35 @@ Note: Still in development. Check back soon for updates.
 
 # library(googlesheets4)
 
-sched <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1v2M5F5Q8SMBOmQt7tyLuQ7I9JECQuqzY7B8lyMdAwcs/edit#gid=0")
+# sched <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1v2M5F5Q8SMBOmQt7tyLuQ7I9JECQuqzY7B8lyMdAwcs/edit#gid=0")
+# 
 
-save(sched, file= here::here("data", "sched.rda"))
+library(readxl)
+
+dateWk <- readxl::read_excel(here::here("data", "2022Winter_DraftedTeams_Emails_Website.xlsx"), sheet="gamesched",
+                                     range = readxl::cell_cols("J:L")) %>% 
+  mutate(Date = as.Date(Date))
+
+sched_wint2022 <- readxl::read_excel(here::here("data", "2022Winter_DraftedTeams_Emails_Website.xlsx"), sheet="gamesched",
+                                     range = readxl::cell_cols("A:D")) %>% 
+  left_join(., dateWk,
+            by = c("Week")) %>% 
+  select(Week, Date, Type, Game, `Field 1`, `Field 2`)
+
+  
+save(sched_wint2022, file= here::here("data", "sched_wint2022.rda"))
+
 
 ```
 
 
-```{r, eval=F}
-load(file= here::here("data", "sched.rda"))
+```{r, eval=T}
+load(file= here::here("data", "sched_wint2022.rda"))
 
-sched %>% 
-  mutate(`Field 1` = str_remove_all(`Field 1`, "@ Field 1"),
-         `Field 2` = str_remove_all(`Field 2`, "@ Field 2")) %>% 
-  select(-Num) %>% 
+sched_wint2022 %>% 
+  # mutate(`Field 1` = str_remove_all(`Field 1`, "@ Field 1"),
+  #        `Field 2` = str_remove_all(`Field 2`, "@ Field 2")) %>% 
+  # select(-Num) %>% 
   reactable(searchable = T, striped = T, fullWidth = T, compact = T)
 
 ```
@@ -221,12 +236,13 @@ knitr::include_graphics(here::here("img","fields.png"))
 We have four teams this year, with either one or two captains per team 
 
 
-# But what does the logo look like???
+# But what does the logo look like?
 
-Currently in development! Check back soon!
+Isn't it cool? We think so. :)
+<!-- Currently in development! Check back soon! -->
 
-```{r echo=FALSE, out.width='50%', eval=T}
-knitr::include_graphics(here::here("img","pic_2022_dark.jpg"))
+```{r echo=FALSE, out.width='50%'}
+knitr::include_graphics(here::here("img","TAU_League2022.png"))
 ```
 
 
