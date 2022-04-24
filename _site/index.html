@@ -13,13 +13,22 @@
 
 <title>Triad Ultimate</title>
 
-<script src="site_libs/header-attrs-2.6/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/darkly.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -41,11 +50,6 @@
     </style>
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -58,32 +62,7 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
 
 
 
@@ -94,10 +73,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -114,40 +89,16 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 60px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h2 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h3 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h4 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h5 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h6 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -175,7 +126,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -187,7 +138,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -198,10 +149,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -213,7 +177,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -280,7 +243,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -293,7 +256,7 @@ $(document).ready(function () {
   <a href="index.html">Home</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     League Info (Sign-ups and Teams)
      
     <span class="caret"></span>
@@ -306,10 +269,13 @@ $(document).ready(function () {
     <li>
       <a href="league-winter-22.html">Winter '22</a>
     </li>
+    <li>
+      <a href="league-spring-22.html">Spring '22</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Other Opportunities
      
     <span class="caret"></span>
@@ -324,7 +290,7 @@ $(document).ready(function () {
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     About
      
     <span class="caret"></span>
@@ -340,7 +306,7 @@ $(document).ready(function () {
 </li>
 <li>
   <a href="mailto:&lt;triadultimate@gmail.com.com&gt;">
-    <span class="fas fa-envelope fa-lg"></span>
+    <span class="fa fa-envelope fa-lg"></span>
      
   </a>
 </li>
@@ -349,7 +315,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -362,63 +328,95 @@ $(document).ready(function () {
 <div id="annoucements" class="section level2">
 <h2>Annoucements</h2>
 <ul>
-<li><strong>2021.10.31</strong>: Sign ups are open for Winter League! Looking forward to seeing your beautiful faces out there!</li>
+<li><strong>2021.10.31</strong>: Sign ups are open for Winter League!
+Looking forward to seeing your beautiful faces out there!</li>
 </ul>
 <p></br></p>
 </div>
 <div id="to-answer-your-questions." class="section level2">
 <h2>To answer your questions….</h2>
-<p>We’ve heard a couple of questions come up when talking with players who haven’t played league with us before, so we wanted to address them here:</p>
+<p>We’ve heard a couple of questions come up when talking with players
+who haven’t played league with us before, so we wanted to address them
+here:</p>
 <ul>
 <li>Skill level:
 <ul>
-<li>We are taking all skill levels and are excited to see Ultimate grow in the Triad area.</li>
-<li>We will be playing by USAU rules, and the captains are there to help educated and ensure everyone has a good time.</li>
+<li>We are taking all skill levels and are excited to see Ultimate grow
+in the Triad area.</li>
+<li>We will be playing by USAU rules, and the captains are there to help
+educated and ensure everyone has a good time.</li>
 </ul></li>
-<li>If a player shows up late to a game because of work can they still play?
+<li>If a player shows up late to a game because of work can they still
+play?
 <ul>
 <li>yep! Just let your captain know so they can plan accordingly.</li>
 </ul></li>
 <li>What can I do if I cannot afford league dues?
 <ul>
-<li>We want to make sure anyone can play, regardless of financial situations. Please reach out to <a href="mailto:triadultimate@gmail.com" class="email">triadultimate@gmail.com</a> and we will find a way to make it work.</li>
+<li>We want to make sure anyone can play, regardless of financial
+situations. Please reach out to <a href="mailto:triadultimate@gmail.com"
+class="email">triadultimate@gmail.com</a> and we will find a way to make
+it work.</li>
 </ul></li>
 </ul>
 </div>
-<div id="how-do-i-keep-up-to-date-on-information" class="section level2">
+<div id="how-do-i-keep-up-to-date-on-information"
+class="section level2">
 <h2>How do I keep up to date on information?</h2>
 <ol style="list-style-type: decimal">
 <li>Join the Slack channel!
 <ul>
 <li>Download Slack</li>
-<li><a href="https://join.slack.com/t/triadareaultimate/shared_invite/zt-vtdsxl1t-hl4Ns2Phwg~VmW2~sfjUlg">Follow this link to join</a></li>
+<li><a
+href="https://join.slack.com/t/triadareaultimate/shared_invite/zt-vtdsxl1t-hl4Ns2Phwg~VmW2~sfjUlg">Follow
+this link to join</a></li>
 </ul></li>
 <li>Check your email
 <ul>
-<li>If you did not get an email reach out to <a href="mailto:triadultimate@gmail.com" class="email">triadultimate@gmail.com</a> so we can update your contact information.</li>
+<li>If you did not get an email reach out to <a
+href="mailto:triadultimate@gmail.com"
+class="email">triadultimate@gmail.com</a> so we can update your contact
+information.</li>
 </ul></li>
 </ol>
 <p></br></p>
 </div>
 <div id="covid-protocols" class="section level2">
 <h2>COVID Protocols</h2>
-<p>We will continue to monitor the situtation as we get closer to the start of league. During Summer League we were very proud of the community for being up front, communicating to the community at large and getting tested when they were alerted to being exposed. We expect that we will continue to have that same level of maturity continue throughout our leagues.</p>
+<p>We will continue to monitor the situtation as we get closer to the
+start of league. During Summer League we were very proud of the
+community for being up front, communicating to the community at large
+and getting tested when they were alerted to being exposed. We expect
+that we will continue to have that same level of maturity continue
+throughout our leagues.</p>
 <p><strong>General Operating Guidelines</strong></p>
 <ul>
-<li>Whenever possible, maintain a safe distance and be respectful of people.</li>
-<li>Masks are not required, but you are welcome to wear one if you desire.</li>
-<li>Proof of vaccination is not required, but if you feel sick or test positive, please <strong>stay home</strong> and <strong>let your captains know</strong> as soon as possible so that we can ensure we are not spreading diseases.</li>
+<li>Whenever possible, maintain a safe distance and be respectful of
+people.</li>
+<li>Masks are not required, but you are welcome to wear one if you
+desire.</li>
+<li>Proof of vaccination is not required, but if you feel sick or test
+positive, please <strong>stay home</strong> and <strong>let your
+captains know</strong> as soon as possible so that we can ensure we are
+not spreading diseases.</li>
 </ul>
 <p><strong>Closing Comments</strong></p>
-<p>If there are material changes to guidance issued by the CDC during the registration period, or during the season, the league rules may be amended to reflect any updates. Any changes will be communicated to all participants in the league.</p>
-<p>We appreciate your cooperation with our game play modifications this summer and look forward to returning to standard league rules and non-modified game play in the near future.</p>
+<p>If there are material changes to guidance issued by the CDC during
+the registration period, or during the season, the league rules may be
+amended to reflect any updates. Any changes will be communicated to all
+participants in the league.</p>
+<p>We appreciate your cooperation with our game play modifications this
+summer and look forward to returning to standard league rules and
+non-modified game play in the near future.</p>
 <p></br></p>
 </div>
 <div id="questions-or-concerns" class="section level2">
 <h2>Questions or concerns?</h2>
 <div id="where-does-your-money-go" class="section level3">
 <h3>Where does your money go?</h3>
-<p>Thank you so much for promptly paying league dues. Our goal is always to keep costs as low as possible to ensure fiances are not a barrier to play.</p>
+<p>Thank you so much for promptly paying league dues. Our goal is always
+to keep costs as low as possible to ensure fiances are not a barrier to
+play.</p>
 <p>The dues go to the following items:</p>
 <ul>
 <li>Reserving fields</li>
@@ -426,15 +424,21 @@ $(document).ready(function () {
 </li>
 <li>Super cool jersey
 <ul>
-<li>Materials + Printing costs + Design fee from exclusive design artist</li>
+<li>Materials + Printing costs + Design fee from exclusive design
+artist</li>
 </ul></li>
 <li>Small buffer to ensure we can cover unforeseen costs</li>
 </ul>
 </div>
 <div id="other-questions" class="section level3">
 <h3>Other Questions?</h3>
-<p>If you have any questions, comments, concerns, suggestions, exhortations, or exclamations please don’t hesitate to reach out to <a href="mailto:triadultimate@gmail.com" class="email">triadultimate@gmail.com</a></p>
-<p>If you have would like to assist in maintenance and context development for this site and/or the league, please also feel free to reach out!</p>
+<p>If you have any questions, comments, concerns, suggestions,
+exhortations, or exclamations please don’t hesitate to reach out to <a
+href="mailto:triadultimate@gmail.com"
+class="email">triadultimate@gmail.com</a></p>
+<p>If you have would like to assist in maintenance and context
+development for this site and/or the league, please also feel free to
+reach out!</p>
 </div>
 </div>
 
@@ -465,7 +469,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>

@@ -12,6 +12,8 @@ navbar:
           href: league-summer-21.html
         - text: "Winter '22"
           href: league-winter-22.html  
+        - text: "Spring '22"
+          href: league-spring-22.html  
  #   - text: "sample"
 #      href: sample_markdown.html
     - text: "Other Opportunities"

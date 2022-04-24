@@ -1,0 +1,253 @@
+---
+title: "Spring Leage 2022"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+knitr::opts_chunk$set(fig.align = 'center')
+library(tidyverse)
+library(leaflet)
+library(reactable)
+library(crosstalk)
+# To Turn off Scientific Notation Use this.
+options(scipen = 999)
+```
+
+
+
+Welcome to the location to sign up for Spring League 2022.
+
+If you want to see more details about how the league is going to be run, choose the [Home page](https://triad-ultimate.netlify.app/index.html) or click the 3 lines on the top right (if you are on your phone).
+
+
+# General Info {.tabset .tabset-fade .tabset-pills}
+
+## When
+
+Dates: April 25th -> May 30th   
+
+* Mondays from 6:30-8:30pm  
+* Multiple games every week!
+* Hanging out after!
+
+<!-- <a target="_blank" href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=MHQ1Z2s5ZHEyNTdvbDRpbG4xbjQ1Mzh0NzBfMjAyMTA2MDFUMjIwMDAwWiB0cmlhZHVsdGltYXRlQG0&amp;tmsrc=triadultimate%40gmail.com&amp;scp=ALL"><img border="0" src="https://www.google.com/calendar/images/ext/gc_button1_en.gif"></a> -->
+
+
+<!-- [Add these days to your google calendar](https://calendar.google.com/event?action=TEMPLATE&tmeid=MHQ1Z2s5ZHEyNTdvbDRpbG4xbjQ1Mzh0NzBfMjAyMTA2MDFUMjIwMDAwWiB0cmlhZHVsdGltYXRlQG0&tmsrc=triadultimate%40gmail.com&scp=ALL) -->
+
+## Where
+
+Use the following address: [Pinetop Sports Club: 3723 Pinetop Rd, Greensboro, NC 27410](https://goo.gl/maps/pXj5HMoZP85Ljrvq9)
+
+<!-- __Park:__ In the dirt lot, fields are down the hill. -->
+
+```{r map, out.width=6, out.height=300, out.width="100%", eval=T}
+# lat/long for field location
+fields <- tibble(
+  name = c("Pinetop Sports Club"),
+  lat = c(36.1105106),
+  long = c(-79.8650783)
+)
+
+l <- 
+  leaflet(data = fields) %>% 
+  addTiles() %>%
+    addProviderTiles(providers$Esri.WorldImagery) %>%
+  addProviderTiles(providers$CartoDB,
+    options = providerTileOptions(opacity = 0.75)) %>%
+  addMarkers(fields$long, 
+             fields$lat, 
+             popup = fields$name
+             ) %>%
+  setView(fields$long, 
+          fields$lat, 
+          zoom = 16) 
+
+l
+# widgetframe::frameWidget(l, width = "100%")
+
+
+# providers <- providers
+```
+
+
+
+## Who
+
+You!  
+
+
+<center>
+![](https://media.giphy.com/media/xUOxf7XfmpxuSode1O/giphy.gif)
+
+
+
+## What (do you get)   
+   
+* 6 weeks of co-ed Ultimate (from April through May) first pull at 630pm, round robin, games to 5.    
+* Friends!  
+
+
+</br>
+
+# Teams {.tabset .tabset-fade .tabset-pills}
+
+
+## Teams
+
+Use the table below to find out what team you are on and who your captains are.
+
+```{r, eval=T}
+
+load(file= here::here("data","springClean.rda"))
+
+
+teams <- 
+  springClean %>% 
+  select(Team, `Team Name`,Gender, Name) %>% 
+  arrange(Team, `Team Name`, Gender, Name) %>% 
+  # mutate(Players = ifelse(Players == "Walker, Phol", "Walker, Phil", Players)) %>% 
+  ungroup()
+
+teams_data <- SharedData$new(teams)
+
+
+# Create a better tooltip for the specific column of interest
+with_tooltip <- function(value, tooltip) {
+  span(
+    style = "text-decoration: underline;",
+    title = tooltip, value
+  )
+}
+
+options(reactable.theme = reactableTheme(
+  color = "hsl(233, 9%, 87%)",
+  backgroundColor = "hsl(233, 9%, 19%)",
+  borderColor = "hsl(233, 9%, 22%)",
+  stripedColor = "hsl(233, 12%, 22%)",
+  highlightColor = "hsl(233, 12%, 24%)",
+  inputStyle = list(backgroundColor = "hsl(233, 9%, 25%)"),
+  selectStyle = list(backgroundColor = "hsl(233, 9%, 25%)"),
+  pageButtonHoverStyle = list(backgroundColor = "hsl(233, 9%, 25%)"),
+  pageButtonActiveStyle = list(backgroundColor = "hsl(233, 9%, 28%)")
+))
+
+
+teams_table <- reactable(teams_data,
+          pagination = T, searchable = T, striped = T, fullWidth = T, compact = T,
+          groupBy = "Team", defaultExpanded = TRUE,
+  #           rowStyle = JS("function(rowInfo) {
+  #   if (rowInfo.level > 0) {
+  #     return { background: '#eee', borderLeft: '2px solid #ffa62d' }
+  #   } else {
+  #     return { borderLeft: '2px solid transparent' }
+  #   }
+  # }"),
+          columns = list(
+            Name = colDef(
+              name = "Player Name",  style = list(fontFamily = "Lato"), align = "left"
+            ),
+             Team = colDef(
+              name = "Team",  style = list(fontFamily = "Lato"), align = "left"
+            ),
+             `Team Name` = colDef(
+              name = "Team Name",  style = list(fontFamily = "Lato"), align = "left"
+            ),
+             Gender = colDef(
+              name = "Gender",  style = list(fontFamily = "Lato"), align = "left"
+            ) 
+          ))
+
+bscols(
+  # bootstrap is built off a 12 wide grid system,
+  # so we have 1/6 and 5/6 width below
+  widths = c(2, 10),
+  list(
+    # filter_checkbox("type", "Role", teams_data, ~Role),
+    filter_select("team", "Team", teams_data, ~`Team Name`),
+    filter_select("ply", "Player Name", teams_data, ~Name)
+  ),
+  # add our table next to the filters
+  teams_table
+)
+
+```
+
+
+
+## Schedules
+
+We will be playing a modified king of the court with the potential for other formats as the season goes one.
+
+This will allow for opportunities to play against multiple different teams and players.
+
+
+<!-- Note: Still in development. Check back soon for updates. -->
+
+```{r, eval=F}
+# tibble(
+#   weekNum = 1:10,
+#   Week = glue::glue("Week {weekNum}"),
+#   `Field 1` = '',
+#   `Field 2` = ''
+# ) %>% 
+#   select(-weekNum) %>% 
+#   reactable()
+
+# library(googlesheets4)
+
+# sched <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1v2M5F5Q8SMBOmQt7tyLuQ7I9JECQuqzY7B8lyMdAwcs/edit#gid=0")
+# 
+
+library(readxl)
+
+dateWk <- readxl::read_excel(here::here("data", "2022Winter_DraftedTeams_Emails_Website.xlsx"), sheet="gamesched",
+                                     range = readxl::cell_cols("J:L")) %>% 
+  mutate(Date = as.Date(Date))
+
+sched_wint2022 <- readxl::read_excel(here::here("data", "2022Winter_DraftedTeams_Emails_Website.xlsx"), sheet="gamesched",
+                                     range = readxl::cell_cols("A:D")) %>% 
+  left_join(., dateWk,
+            by = c("Week")) %>% 
+  select(Week, Date, Type, Game, `Field 1`, `Field 2`)
+
+  
+save(sched_wint2022, file= here::here("data", "sched_wint2022.rda"))
+
+
+```
+
+
+```{r, eval=F}
+load(file= here::here("data", "sched_wint2022.rda"))
+
+sched_wint2022 %>% 
+  # mutate(`Field 1` = str_remove_all(`Field 1`, "@ Field 1"),
+  #        `Field 2` = str_remove_all(`Field 2`, "@ Field 2")) %>% 
+  # select(-Num) %>% 
+  reactable(searchable = T, striped = T, fullWidth = T, compact = T)
+
+```
+
+
+```{r echo=FALSE, out.width='50%', eval=F}
+knitr::include_graphics(here::here("img","fields.png"))
+```
+
+
+
+# But what does the logo look like?
+
+Isn't it cool? We think so. :)
+<!-- Currently in development! Check back soon! -->
+
+```{r echo=FALSE, out.width='50%'}
+knitr::include_graphics(here::here("img","TAU_League2022.png"))
+```
+
+
+
+

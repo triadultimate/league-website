@@ -13,35 +13,46 @@
 
 <title>Signing Up</title>
 
-<script src="site_libs/header-attrs-2.6/header-attrs.js"></script>
-<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/darkly.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<script src="site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
 <link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
 <script src="site_libs/proj4-2.6.2/proj4.min.js"></script>
 <script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="site_libs/leaflet-binding-2.0.4.1/leaflet.js"></script>
+<script src="site_libs/leaflet-binding-2.1.1/leaflet.js"></script>
 <script src="site_libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
-<script src="site_libs/leaflet-providers-plugin-2.0.4.1/leaflet-providers-plugin.js"></script>
-<link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
-<script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
-<link href="site_libs/selectize-0.11.2/css/selectize.bootstrap3.css" rel="stylesheet" />
-<script src="site_libs/selectize-0.11.2/js/selectize.min.js"></script>
+<script src="site_libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
+<link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="site_libs/selectize-0.12.4/css/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="site_libs/selectize-0.12.4/js/selectize.min.js"></script>
 <script src="site_libs/core-js-2.5.3/shim.min.js"></script>
 <script src="site_libs/react-17.0.0/react.min.js"></script>
 <script src="site_libs/react-17.0.0/react-dom.min.js"></script>
 <script src="site_libs/reactwidget-1.0.0/react-tools.js"></script>
 <script src="site_libs/reactable-binding-0.2.3/reactable.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-grid-3.4.1/bootstrap-grid.min.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <link rel="shortcut icon" href="./img/favicon.ico" />
@@ -60,11 +71,6 @@
     </style>
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -77,32 +83,7 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
 
 
 
@@ -113,10 +94,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -133,40 +110,16 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 60px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h2 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h3 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h4 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h5 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h6 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -194,7 +147,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -206,7 +159,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -217,10 +170,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -232,7 +198,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -299,7 +264,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -312,7 +277,7 @@ $(document).ready(function () {
   <a href="index.html">Home</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     League Info (Sign-ups and Teams)
      
     <span class="caret"></span>
@@ -325,10 +290,13 @@ $(document).ready(function () {
     <li>
       <a href="league-winter-22.html">Winter '22</a>
     </li>
+    <li>
+      <a href="league-spring-22.html">Spring '22</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Other Opportunities
      
     <span class="caret"></span>
@@ -343,7 +311,7 @@ $(document).ready(function () {
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     About
      
     <span class="caret"></span>
@@ -359,7 +327,7 @@ $(document).ready(function () {
 </li>
 <li>
   <a href="mailto:&lt;triadultimate@gmail.com.com&gt;">
-    <span class="fas fa-envelope fa-lg"></span>
+    <span class="fa fa-envelope fa-lg"></span>
      
   </a>
 </li>
@@ -368,7 +336,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -378,8 +346,12 @@ $(document).ready(function () {
 
 
 <p>Welcome to the location to sign up for Winter League 2022.</p>
-<p>If you want to see more details about how the league is going to be run, choose the <a href="https://triad-ultimate.netlify.app/index.html">Home page</a> or click the 3 lines on the top right (if you are on your phone).</p>
-<div id="winter-league-2022-info" class="section level1 tabset tabset-fade tabset-pills">
+<p>If you want to see more details about how the league is going to be
+run, choose the <a
+href="https://triad-ultimate.netlify.app/index.html">Home page</a> or
+click the 3 lines on the top right (if you are on your phone).</p>
+<div id="winter-league-2022-info"
+class="section level1 tabset tabset-fade tabset-pills">
 <h1 class="tabset tabset-fade tabset-pills">Winter League 2022 Info</h1>
 <div id="when" class="section level2">
 <h2>When</h2>
@@ -395,21 +367,25 @@ $(document).ready(function () {
 </div>
 <div id="where" class="section level2">
 <h2>Where</h2>
-<p>Use the following address: <a href="https://goo.gl/maps/7PLdHMdhcAW4dKLt6">Smith Soccer Park: 2399 Veasley St, Greensboro, NC 27407</a></p>
+<p>Use the following address: <a
+href="https://goo.gl/maps/7PLdHMdhcAW4dKLt6">Smith Soccer Park: 2399
+Veasley St, Greensboro, NC 27407</a></p>
 <!-- __Park:__ In the dirt lot, fields are down the hill. -->
-<div id="htmlwidget-1f0e0e033008d0d76f26" style="width:100%;height:300px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1f0e0e033008d0d76f26">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addProviderTiles","args":["CartoDB",null,null,{"errorTileUrl":"","noWrap":false,"opacity":0.75,"detectRetina":false}]},{"method":"addMarkers","args":[36.0358156,-79.8463414,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Smith Soccer Park",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[36.0358156,36.0358156],"lng":[-79.8463414,-79.8463414]},"setView":[[36.0358156,-79.8463414],16,[]]},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-855d8951a3a19d663ba8" style="width:100%;height:300px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-855d8951a3a19d663ba8">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addProviderTiles","args":["CartoDB",null,null,{"errorTileUrl":"","noWrap":false,"opacity":0.75,"detectRetina":false}]},{"method":"addMarkers","args":[36.0358156,-79.8463414,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Smith Soccer Park",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[36.0358156,36.0358156],"lng":[-79.8463414,-79.8463414]},"setView":[[36.0358156,-79.8463414],16,[]]},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="who" class="section level2">
 <h2>Who</h2>
 <p>You!</p>
 <center>
-<p><img src="https://media.giphy.com/media/xUOxf7XfmpxuSode1O/giphy.gif" /></p>
+<p><img
+src="https://media.giphy.com/media/xUOxf7XfmpxuSode1O/giphy.gif" /></p>
 </div>
 <div id="what-do-you-get" class="section level2">
 <h2>What (do you get)</h2>
 <ul>
-<li>9 weeks of co-ed Ultimate (from January to March) first pull at 9am, playing to 15 or hard cap at 8pm.<br />
+<li>9 weeks of co-ed Ultimate (from January to March) first pull at 9am,
+playing to 15 or hard cap at 8pm.<br />
 </li>
 <li>1 day tournament on a Saturday in March<br />
 </li>
@@ -424,9 +400,10 @@ $(document).ready(function () {
 <h1 class="tabset tabset-fade tabset-pills">Teams</h1>
 <div id="teams-1" class="section level2">
 <h2>Teams</h2>
-<p>Use the table below to find out what team you are on and who your captains are.</p>
+<p>Use the table below to find out what team you are on and who your
+captains are.</p>
 <div class="container-fluid crosstalk-bscols">
-<div class="fluid-row">
+<div class="row">
 <div class="col-xs-2">
 <div id="type" class="form-group crosstalk-input-checkboxgroup crosstalk-input">
 <label class="control-label" for="type">Role</label>
@@ -449,7 +426,7 @@ $(document).ready(function () {
     "Captain": ["1", "2", "21", "22", "40", "58", "59"],
     "Player": ["3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75"]
   },
-  "group": ["SharedData649291e1"]
+  "group": ["SharedData20bab786"]
 }</script>
 </div>
 <div id="team" class="form-group crosstalk-input-select crosstalk-input">
@@ -467,7 +444,7 @@ $(document).ready(function () {
     "M": ["40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57"],
     "PM": ["58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75"]
   },
-  "group": ["SharedData649291e1"]
+  "group": ["SharedData20bab786"]
 }</script>
 </div>
 </div>
@@ -557,14 +534,14 @@ $(document).ready(function () {
     "william coffin": ["39"],
     "Zoe Zhu": ["62"]
   },
-  "group": ["SharedData649291e1"]
+  "group": ["SharedData20bab786"]
 }</script>
 </div>
 </div>
 </div>
 <div class="col-xs-10">
-<div id="htmlwidget-9e43e2934c53c55fac2b" class="reactable html-widget" style="width:auto;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-9e43e2934c53c55fac2b">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Team":["CS","CS","CS","CS","CS","CS","CS","CS","CS","CS","CS","CS","CS","CS","CS","CS","CS","CS","CS","CS","JL","JL","JL","JL","JL","JL","JL","JL","JL","JL","JL","JL","JL","JL","JL","JL","JL","JL","JL","M","M","M","M","M","M","M","M","M","M","M","M","M","M","M","M","M","M","PM","PM","PM","PM","PM","PM","PM","PM","PM","PM","PM","PM","PM","PM","PM","PM","PM","PM"],"Players":["Carla Millan","Scott SanGeorge","Katherine Frei","Tammy Moose","Taylor hacker","taylor Zambrano","David Kahn","Hugh Fitzgerald","Johan Madson","Jonathan Schmidt","Josh Roderick","Josiah SanGeorge","JT","Kelly","Kevin Doubleday","Lyelle Davis","Matthew Avara","Nicolas de la Vega billingsley","Sam Henderson","Samir Lilienfeld","lissette rodriguez","Jason Pierce","Carolyn Godwin","Jess Cheu","Lauren Latham","Olivia Stenson","Adam","Buck Schneider","Douglas Wolf","Dustin Barton","Dylan West","Gerhard Klein","James Mangum","Joe Melton","Josh Alvarez","Joshua Rosencrance","Mishal PB","Rowan Sedgwick-Bufter","william coffin","Mike Ridge","Beth Sherling","Julia Fuster","Natalie Watt","Taryn Bonner","Andrew Stricklin","Brian May","Cassius Bostic","Chris Harrison","Harris Cannon","John Stoltz","Karl Richardson","Mark Henkle","Matt Kern","Nick Peppers","Ross Hansen","Sebastian Berea","Walker Shields","Mariamme Burgess","Philip Walker","Anna Price","Laura Millan","Zoe Zhu","Anthony Piraino","Brian Gane","Cesar Grisales","Cole Harbur","George Fitzgerald","Jacob Simpson","Jimmy Holtzman","Josh Kripas","Josh Noel","Kyle Cornell","McKinley Johnson","Sean Freed","Teagan graham"],"Gender":["Female","Male","Female","Female","Female","Female","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Female","Male","Female","Female","Female","Female","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Female","Female","Female","Female","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Female","Male","Female","Female","Female","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male"],"Role":["Captain","Captain","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Captain","Captain","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Captain","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Captain","Captain","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player"]},"columns":[{"accessor":"Team","name":"Team Color","type":"character","align":"left","style":{"fontFamily":"Lato"}},{"accessor":"Players","name":"Player Name","type":"character","align":"left","style":{"fontFamily":"Lato"}},{"accessor":"Gender","name":"Gender","type":"character","align":"left","style":{"fontFamily":"Lato"}},{"accessor":"Role","name":"Role","type":"character","align":"left","style":{"fontFamily":"Lato"}}],"pivotBy":["Team"],"searchable":true,"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"defaultExpanded":true,"striped":true,"compact":true,"theme":{"color":"hsl(233, 9%, 87%)","backgroundColor":"hsl(233, 9%, 19%)","borderColor":"hsl(233, 9%, 22%)","stripedColor":"hsl(233, 12%, 22%)","highlightColor":"hsl(233, 12%, 24%)","inputStyle":{"backgroundColor":"hsl(233, 9%, 25%)"},"selectStyle":{"backgroundColor":"hsl(233, 9%, 25%)"},"pageButtonHoverStyle":{"backgroundColor":"hsl(233, 9%, 25%)"},"pageButtonActiveStyle":{"backgroundColor":"hsl(233, 9%, 28%)"}},"crosstalkKey":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75"],"crosstalkGroup":"SharedData649291e1","dataKey":"b58fc87244cd06c8a564af0942d8deb8","key":"b58fc87244cd06c8a564af0942d8deb8"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-a61820f7bf87976e8fb6" class="reactable html-widget" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-a61820f7bf87976e8fb6">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Team":["CS","CS","CS","CS","CS","CS","CS","CS","CS","CS","CS","CS","CS","CS","CS","CS","CS","CS","CS","CS","JL","JL","JL","JL","JL","JL","JL","JL","JL","JL","JL","JL","JL","JL","JL","JL","JL","JL","JL","M","M","M","M","M","M","M","M","M","M","M","M","M","M","M","M","M","M","PM","PM","PM","PM","PM","PM","PM","PM","PM","PM","PM","PM","PM","PM","PM","PM","PM","PM"],"Players":["Carla Millan","Scott SanGeorge","Katherine Frei","Tammy Moose","Taylor hacker","taylor Zambrano","David Kahn","Hugh Fitzgerald","Johan Madson","Jonathan Schmidt","Josh Roderick","Josiah SanGeorge","JT","Kelly","Kevin Doubleday","Lyelle Davis","Matthew Avara","Nicolas de la Vega billingsley","Sam Henderson","Samir Lilienfeld","lissette rodriguez","Jason Pierce","Carolyn Godwin","Jess Cheu","Lauren Latham","Olivia Stenson","Adam","Buck Schneider","Douglas Wolf","Dustin Barton","Dylan West","Gerhard Klein","James Mangum","Joe Melton","Josh Alvarez","Joshua Rosencrance","Mishal PB","Rowan Sedgwick-Bufter","william coffin","Mike Ridge","Beth Sherling","Julia Fuster","Natalie Watt","Taryn Bonner","Andrew Stricklin","Brian May","Cassius Bostic","Chris Harrison","Harris Cannon","John Stoltz","Karl Richardson","Mark Henkle","Matt Kern","Nick Peppers","Ross Hansen","Sebastian Berea","Walker Shields","Mariamme Burgess","Philip Walker","Anna Price","Laura Millan","Zoe Zhu","Anthony Piraino","Brian Gane","Cesar Grisales","Cole Harbur","George Fitzgerald","Jacob Simpson","Jimmy Holtzman","Josh Kripas","Josh Noel","Kyle Cornell","McKinley Johnson","Sean Freed","Teagan graham"],"Gender":["Female","Male","Female","Female","Female","Female","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Female","Male","Female","Female","Female","Female","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Female","Female","Female","Female","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Female","Male","Female","Female","Female","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male","Male"],"Role":["Captain","Captain","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Captain","Captain","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Captain","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Captain","Captain","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player","Player"]},"columns":[{"accessor":"Team","name":"Team Color","type":"character","align":"left","style":{"fontFamily":"Lato"}},{"accessor":"Players","name":"Player Name","type":"character","align":"left","style":{"fontFamily":"Lato"}},{"accessor":"Gender","name":"Gender","type":"character","align":"left","style":{"fontFamily":"Lato"}},{"accessor":"Role","name":"Role","type":"character","align":"left","style":{"fontFamily":"Lato"}}],"pivotBy":["Team"],"searchable":true,"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"defaultExpanded":true,"striped":true,"compact":true,"theme":{"color":"hsl(233, 9%, 87%)","backgroundColor":"hsl(233, 9%, 19%)","borderColor":"hsl(233, 9%, 22%)","stripedColor":"hsl(233, 12%, 22%)","highlightColor":"hsl(233, 12%, 24%)","inputStyle":{"backgroundColor":"hsl(233, 9%, 25%)"},"selectStyle":{"backgroundColor":"hsl(233, 9%, 25%)"},"pageButtonHoverStyle":{"backgroundColor":"hsl(233, 9%, 25%)"},"pageButtonActiveStyle":{"backgroundColor":"hsl(233, 9%, 28%)"}},"crosstalkKey":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75"],"crosstalkGroup":"SharedData20bab786","dataKey":"b58fc87244cd06c8a564af0942d8deb8","key":"b58fc87244cd06c8a564af0942d8deb8"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -572,25 +549,29 @@ $(document).ready(function () {
 <div id="schedules" class="section level2">
 <h2>Schedules</h2>
 <!-- Note: Still in development. Check back soon for updates. -->
-<div id="htmlwidget-72e18770772178f7ada3" class="reactable html-widget" style="width:auto;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-72e18770772178f7ada3">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Week":[1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,9],"Date":["2022-01-08","2022-01-08","2022-01-15","2022-01-15","2022-01-22","2022-01-22","2022-01-29","2022-01-29","2022-02-05","2022-02-05","2022-02-12","2022-02-12","2022-02-19","2022-02-19","2022-02-26","2022-02-26","2022-03-05","2022-03-05","2022-03-05"],"Type":["Regular","Regular","Regular","Regular","Regular","Regular","Regular","Regular","Regular","Regular","Regular","Regular","Regular","Regular","Regular","Regular","Tourney","Tourney","Tourney"],"Game":[1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,3],"Field 1":["M vs PM","M vs JL","M vs SC","JL vs SC","PM vs SC","PM vs JL","M vs PM","M vs JL","M vs SC","JL vs SC","PM vs SC","PM vs JL","M vs PM","M vs JL","M vs SC","M vs PM","TBD","TBD","TBD"],"Field 2":["JL vs SC","PM vs SC","PM vs JL","M vs PM","M vs JL","M vs SC","JL vs SC","PM vs SC","PM vs JL","M vs PM","M vs JL","M vs SC","JL vs SC","PM vs SC","PM vs JL","JL vs SC","TBD","TBD","TBD"]},"columns":[{"accessor":"Week","name":"Week","type":"numeric"},{"accessor":"Date","name":"Date","type":"Date"},{"accessor":"Type","name":"Type","type":"character"},{"accessor":"Game","name":"Game","type":"numeric"},{"accessor":"Field 1","name":"Field 1","type":"character"},{"accessor":"Field 2","name":"Field 2","type":"character"}],"searchable":true,"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"striped":true,"compact":true,"theme":{"color":"hsl(233, 9%, 87%)","backgroundColor":"hsl(233, 9%, 19%)","borderColor":"hsl(233, 9%, 22%)","stripedColor":"hsl(233, 12%, 22%)","highlightColor":"hsl(233, 12%, 24%)","inputStyle":{"backgroundColor":"hsl(233, 9%, 25%)"},"selectStyle":{"backgroundColor":"hsl(233, 9%, 25%)"},"pageButtonHoverStyle":{"backgroundColor":"hsl(233, 9%, 25%)"},"pageButtonActiveStyle":{"backgroundColor":"hsl(233, 9%, 28%)"}},"dataKey":"351c2d41a7aae8c4bf54ff49fec9ebb6","key":"351c2d41a7aae8c4bf54ff49fec9ebb6"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-2f92ec92e14491bc95f6" class="reactable html-widget" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-2f92ec92e14491bc95f6">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Week":[1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,9],"Date":["2022-01-08","2022-01-08","2022-01-15","2022-01-15","2022-01-22","2022-01-22","2022-01-29","2022-01-29","2022-02-05","2022-02-05","2022-02-12","2022-02-12","2022-02-19","2022-02-19","2022-02-26","2022-02-26","2022-03-05","2022-03-05","2022-03-05"],"Type":["Regular","Regular","Regular","Regular","Regular","Regular","Regular","Regular","Regular","Regular","Regular","Regular","Regular","Regular","Regular","Regular","Tourney","Tourney","Tourney"],"Game":[1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,3],"Field 1":["M vs PM","M vs JL","M vs SC","JL vs SC","PM vs SC","PM vs JL","M vs PM","M vs JL","M vs SC","JL vs SC","PM vs SC","PM vs JL","M vs PM","M vs JL","M vs SC","M vs PM","TBD","TBD","TBD"],"Field 2":["JL vs SC","PM vs SC","PM vs JL","M vs PM","M vs JL","M vs SC","JL vs SC","PM vs SC","PM vs JL","M vs PM","M vs JL","M vs SC","JL vs SC","PM vs SC","PM vs JL","JL vs SC","TBD","TBD","TBD"]},"columns":[{"accessor":"Week","name":"Week","type":"numeric"},{"accessor":"Date","name":"Date","type":"Date"},{"accessor":"Type","name":"Type","type":"character"},{"accessor":"Game","name":"Game","type":"numeric"},{"accessor":"Field 1","name":"Field 1","type":"character"},{"accessor":"Field 2","name":"Field 2","type":"character"}],"searchable":true,"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"striped":true,"compact":true,"theme":{"color":"hsl(233, 9%, 87%)","backgroundColor":"hsl(233, 9%, 19%)","borderColor":"hsl(233, 9%, 22%)","stripedColor":"hsl(233, 12%, 22%)","highlightColor":"hsl(233, 12%, 24%)","inputStyle":{"backgroundColor":"hsl(233, 9%, 25%)"},"selectStyle":{"backgroundColor":"hsl(233, 9%, 25%)"},"pageButtonHoverStyle":{"backgroundColor":"hsl(233, 9%, 25%)"},"pageButtonActiveStyle":{"backgroundColor":"hsl(233, 9%, 28%)"}},"dataKey":"351c2d41a7aae8c4bf54ff49fec9ebb6","key":"351c2d41a7aae8c4bf54ff49fec9ebb6"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="captains" class="section level2">
 <h2>Captains</h2>
-<p>We have four teams this year, with either one or two captains per team</p>
+<p>We have four teams this year, with either one or two captains per
+team</p>
 </div>
 </div>
 <div id="but-what-does-the-logo-look-like" class="section level1">
 <h1>But what does the logo look like?</h1>
-<p>Isn’t it cool? We think so. :) <!-- Currently in development! Check back soon! --></p>
+<p>Isn’t it cool? We think so. :)
+<!-- Currently in development! Check back soon! --></p>
 <p><img src="img/TAU_League2022.png" width="50%" style="display: block; margin: auto;" /></p>
 </div>
-<div id="sign-up-steps" class="section level1 tabset tabset-fade tabset-pills">
+<div id="sign-up-steps"
+class="section level1 tabset tabset-fade tabset-pills">
 <h1 class="tabset tabset-fade tabset-pills">Sign up Steps</h1>
 <div id="sign-up" class="section level2">
 <h2>Sign up</h2>
 <ol style="list-style-type: decimal">
-<li>Send money (<strong>$60</strong>) to Triad Ultimate via paypal or venmo<br />
+<li>Send money (<strong>$60</strong>) to Triad Ultimate via paypal or
+venmo<br />
 <!-- * Venmo >> [Link to account](https://venmo.com/code?user_id=1599495850688512407 )   -->
 <ul>
 <li>Venmo &gt;&gt; <a href="https://venmo.com">Link to account</a>
@@ -599,20 +580,26 @@ $(document).ready(function () {
 <li>Must also be accessed through your phone.</li>
 <li>use username: “<span class="citation">@Philip-Walker</span>”</li>
 </ul></li>
-<li>PayPal &gt;&gt; <a href="https://paypal.me/Phillyfrilz">Link to paypal</a>
+<li>PayPal &gt;&gt; <a href="https://paypal.me/Phillyfrilz">Link to
+paypal</a>
 <ul>
 <li>use username: “Phillyfrilz”</li>
-<li>Note: This account is associated with our league treasurer (Phil Walker), don’t be afraid, he’s super trustworthy.</li>
+<li>Note: This account is associated with our league treasurer (Phil
+Walker), don’t be afraid, he’s super trustworthy.</li>
 </ul></li>
 </ul></li>
-<li>Please fill out the survey form below to help us understand your relative skill level.<br />
+<li>Please fill out the survey form below to help us understand your
+relative skill level.<br />
 </li>
 <li>Wait eagerly for league to start.
 <ul>
-<li>You will be be contacted soon, the captains will be gathering to figure out how to best set up teams to ensure we all have a fun time this summer.</li>
+<li>You will be be contacted soon, the captains will be gathering to
+figure out how to best set up teams to ensure we all have a fun time
+this summer.</li>
 </ul></li>
 </ol>
-<p>Instead of filling out the form below, you can also click on <a href="https://forms.gle/SH1SyBCZ5RZekeeB8">this link</a></p>
+<p>Instead of filling out the form below, you can also click on <a
+href="https://forms.gle/SH1SyBCZ5RZekeeB8">this link</a></p>
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScEZHYwBvH4RnN7ItE8CsowxQLJmzeO0YwXnI724wNJnvIsEw/viewform?embedded=true" width="840" height="600" frameborder="0" marginheight="0" marginwidth="0">
 Loading…
 </iframe>
@@ -650,7 +637,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
