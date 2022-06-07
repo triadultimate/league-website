@@ -40,16 +40,16 @@ Dates: June 9th -> Aug 20th (Saturday Tournament)
 
 ## Where
 
-Use the following address: [Hine Soccer Park: 5895 Bethabara Park, Winston-Salem, NC 27106](https://goo.gl/maps/yFRGMwxuXAsQakYx7)
+Use the following address: [Shaffner Park: 900 Yorkshire Rd, Winston-Salem, NC 27106](https://goo.gl/maps/CU5JbxYx1UNGAvrJ7)
 
 <!-- __Park:__ In the dirt lot, fields are down the hill. -->
 
 ```{r map, out.width=6, out.height=300, out.width="100%", eval=T}
 # lat/long for field location
 fields <- tibble(
-  name = c("Hine Soccer Park"),
-  lat = c(36.1626647),
-  long = c(-80.289553)
+  name = c("Shaffner Park"),
+  lat = c(36.0997865),
+  long = c(-79.8184677)
 )
 
 l <- 
